@@ -9,7 +9,10 @@ const data = [
   {title: "Can I create an accordion component?", text: "On the 'Star Rating\" project, if you had trouble changing colors on the \"hover' and 'mouseover' states, another way to do it is to have two sets of stars you can toggle between. For example, if a user clicks, or their "}]
 
 function App() {
-  const initialIsOpen = [false, false, false, false];
+  const initialIsOpen = [];
+  for (let i = 0; i < data.length; i++) {
+    initialIsOpen.push(false);
+  }
   const [isOpen, setIsOpen] = useState(initialIsOpen);
   const [multiSelection, setMultiSelection] = useState(false);
 
@@ -21,19 +24,27 @@ function App() {
       } else{
         newArray = [false, false, false, false];
       }
-      newArray[index] = true;
+      if (prev[index] === true){
+        newArray[index] = false;
+      } else{
+        newArray[index] = true;
+      }
       console.log(newArray);
       return newArray;
     });
-    console.log(isOpen[index]);
-    // setIsOpen([true, true, true, true]);
   }
-
+  function handleMultiSelection() {
+    if (multiSelection) {
+      setMultiSelection(false);
+    } else{
+      setMultiSelection(true);
+    }
+  }
 
   console.log("renderizado");
   return (
     <div className="container">
-      <button className="box" onClick={() => setMultiSelection(true)}>Enable Multi Selection</button>
+      <button className="box" onClick={handleMultiSelection}>Enable Multi Selection</button>
       <ol>
         {data.map((item, index) => (
           <li key={index}>

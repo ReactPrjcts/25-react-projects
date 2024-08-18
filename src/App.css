@@ -8,6 +8,7 @@ html {
     background: #ffffff;
     font-family: "Quicksand", sans-serif;
     min-height: 100vh;
+    width: 100vw;
 }
 .container {
     display: flex;
