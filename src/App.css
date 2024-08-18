@@ -1,27 +1,36 @@
 * {
     padding: 0;
-    /*margin: 5px;*/
+    margin: 0;
     box-sizing: border-box;
     color: #fff;
 }
-html {
-    background: #ffffff;
-    font-family: "Quicksand", sans-serif;
-    min-height: 100vh;
-    width: 100vw;
-}
+
 .container {
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 }
 .box{
+    font-size: 110%;
     background-color: #6c3434;
-    padding: 5px;
+    padding: 10px;
     width: 500px;
     margin: 5px auto;
 }
 button:hover{
     cursor: pointer;
+}
+.randomColor{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 30px;
+}
+.randomColor button{
+    color: black;
 }
